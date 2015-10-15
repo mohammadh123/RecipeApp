@@ -1,5 +1,6 @@
 package com.example.mohammad.recipeapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        OnClickButtonListener();
     }
 
     @Override
@@ -40,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
         Button settings_button = (Button)findViewById(R.id.SettingsButton);
         settings_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent
+                Intent intent = new Intent("com.example.mohammad.recipeapp.Main2Activity");
+                startActivity(intent);
             }
         });
     }
