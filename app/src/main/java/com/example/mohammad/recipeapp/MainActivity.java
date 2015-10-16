@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-        OnClickButtonListener();
+        //call this function
+        SettingsOnClickButtonListener();
     }
 
     @Override
@@ -39,11 +39,25 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    public void OnClickButtonListener(){
+    public void SettingsOnClickButtonListener(){
+        //find the id of the button the user is going to press
         Button settings_button = (Button)findViewById(R.id.SettingsButton);
+
         settings_button.setOnClickListener(new View.OnClickListener() {
+            //If the button has been clicked, it will call this method
             public void onClick(View v) {
                 Intent intent = new Intent("com.example.mohammad.recipeapp.Main2Activity");
+                startActivity(intent);
+            }
+        });
+    }
+
+    public void SearchOnClickButtonListener(){
+        Button search_button = (Button)findViewById(R.id.SearchButton);
+
+        search_button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent("com.example.mohammad.recipeapp.SearchActivity");
                 startActivity(intent);
             }
         });

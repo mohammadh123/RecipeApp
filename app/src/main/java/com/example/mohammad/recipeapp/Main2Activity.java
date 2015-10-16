@@ -6,6 +6,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -29,15 +31,32 @@ public class Main2Activity extends AppCompatActivity {
         });
     }
 
-    private void settingsPreference(){
-        final ArrayList<String> items = new ArrayList<String>();
-        items.add("Halal");
-        items.add("Pork");
-        items.add("Vegetarian");
-
-        checkSelected = new boolean[items.size()];
-        for(int i =0; i<checkSelected.length; i++){
-            checkSelected[i] = false;
+    /*
+    * Cite: http://developer.android.com/guide/topics/ui/controls/checkbox.html
+    * Setting preferences
+    * */
+    public void onCheckboxClicked(View view){
+        boolean checked = ((CheckBox)view).isChecked();
+        switch(view.getId()){
+            case R.id.KosherCheckBox:
+                if(checked){
+                    Toast.makeText(getBaseContext(), "Kosher is checked", Toast.LENGTH_LONG).show();
+                } else{
+                    Toast.makeText(getBaseContext(), "Kosher is unchecked", Toast.LENGTH_LONG).show();
+                }
+                break;
+            case R.id.PorkCheckBox:
+                if(checked){
+                    Toast.makeText(getBaseContext(), "Pork is checked", Toast.LENGTH_LONG).show();
+                } else{
+                    Toast.makeText(getBaseContext(), "Pork is unchecked", Toast.LENGTH_LONG).show();
+                }
+            case R.id.VegetarianCheckBox:
+                if(checked){
+                    Toast.makeText(getBaseContext(), "Vegetarian is checked", Toast.LENGTH_LONG).show();
+                } else{
+                    Toast.makeText(getBaseContext(), "Vegetarian is checked", Toast.LENGTH_LONG).show();
+                }
         }
     }
 
