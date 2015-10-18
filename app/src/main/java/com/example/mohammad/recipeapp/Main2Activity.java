@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class Main2Activity extends AppCompatActivity {
 
-    public static boolean[] checkSelected;
+    //public static boolean[] checkSelected;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,14 +21,15 @@ public class Main2Activity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        }); */
+        //onCheckboxClicked();
     }
 
     /*
@@ -36,23 +37,23 @@ public class Main2Activity extends AppCompatActivity {
     * Setting preferences
     * */
     public void onCheckboxClicked(View view){
-        boolean checked = ((CheckBox)view).isChecked();
+        boolean checkedSelected = ((CheckBox)view).isChecked();
         switch(view.getId()){
             case R.id.KosherCheckBox:
-                if(checked){
+                if(checkedSelected){
                     Toast.makeText(getBaseContext(), "Kosher is checked", Toast.LENGTH_LONG).show();
                 } else{
                     Toast.makeText(getBaseContext(), "Kosher is unchecked", Toast.LENGTH_LONG).show();
                 }
                 break;
             case R.id.PorkCheckBox:
-                if(checked){
+                if(checkedSelected){
                     Toast.makeText(getBaseContext(), "Pork is checked", Toast.LENGTH_LONG).show();
                 } else{
                     Toast.makeText(getBaseContext(), "Pork is unchecked", Toast.LENGTH_LONG).show();
                 }
             case R.id.VegetarianCheckBox:
-                if(checked){
+                if(checkedSelected){
                     Toast.makeText(getBaseContext(), "Vegetarian is checked", Toast.LENGTH_LONG).show();
                 } else{
                     Toast.makeText(getBaseContext(), "Vegetarian is checked", Toast.LENGTH_LONG).show();
